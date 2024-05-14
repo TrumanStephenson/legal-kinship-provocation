@@ -36,14 +36,16 @@ CREATE TABLE mmiw (
 	id INTEGER PRIMARY KEY AUTOINCREMENT, 
 	mmiw_total REAL, 
 	mmiw_year INTEGER, 
-	FOREIGN KEY (recognized_tribes_id) REFERENCES recognizedTribes(id)
+	FOREIGN KEY (recognized_tribes_id) REFERENCES recognized_tribes(id)
 	);
 
-INSERT INTO mmiw (mmiw_total, mmiw_year, recognized_tribes_id) VALUES (5491, 2022, 5, 2);
-INSERT INTO mmiw (mmiw_total, mmiw_year, recognized_tribes_id) VALUES (506, 2018, 2, 1);
-INSERT INTO mmiw (mmiw_total, mmiw_year, recognized_tribes_id) VALUES (10120, 2022, 4, 3);
-INSERT INTO mmiw (mmiw_total, mmiw_year, recognized_tribes_id) VALUES (10120, 2022, 20, 1);
-INSERT INTO mmiw (mmiw_total, mmiw_year, recognized_tribes_id) VALUES (10120, 2022, 18, 6);
+INSERT INTO mmiw (mmiw_total, mmiw_year, recognized_tribes_id) VALUES (5491, 2022, 5);
+INSERT INTO mmiw (mmiw_total, mmiw_year, recognized_tribes_id) VALUES (506, 2018, 2);
+INSERT INTO mmiw (mmiw_total, mmiw_year, recognized_tribes_id) VALUES (10120, 2019, 4);
+INSERT INTO mmiw (mmiw_total, mmiw_year, recognized_tribes_id) VALUES (87, 2017, 7);
+INSERT INTO mmiw (mmiw_total, mmiw_year, recognized_tribes_id) VALUES (36, 2021, 5);
+INSERT INTO mmiw (mmiw_total, mmiw_year, recognized_tribes_id) VALUES (72, 2018, 22);
+INSERT INTO mmiw (mmiw_total, mmiw_year, recognized_tribes_id) VALUES (36, 2021, 64);
 
 
 CREATE TABLE recognized_tribes (
@@ -118,7 +120,8 @@ INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, r
 INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians', 'Oregon', '1245 Fulton Ave, Coos Bay, OR 97420', 5418889577, 'news@ctclusi.org');
 INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Confederated Tribes of the Goshute Reservation, Nevada and Utah', 'Utah', '660 S 200 E Ste 250, Salt Lake City, UT 84111', 8013592256, NULL);
 INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Confederated Tribes of the Grand Ronde Community of Oregon', 'Oregon', '9615 Grand Ronde Rd, Grand Ronde, OR 97347', 5038795211, 'info@grandronde.org');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Confederated Tribes of the Umatilla Indian Reservation', 'Oregon', '', , '');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Confederated Tribes of the Umatilla Indian Reservation', 'Oregon', NULL, , NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Pawnee Nation of Oklahoma', 'Oklahoma', '881 Little Dee Dr Pawnee, OK 74058', , 9187623621);
 
 
 
@@ -203,17 +206,36 @@ CREATE TABLE treaties (
 	FOREIGN KEY (recognized_tribes_id) REFERENCES recognized_tribes(id), 
 	FOREIGN KEY (recognized_tribes_state) REFERENCES recognized_tribes(rec_location_state),
 	date TEXT,
-	FOREIGN KEY (lawyers_involved) REFERENCES lawyers(name)
 	);
 	
-CREATE TABLE landMarkCases (
+INSERT INTO treaties (recognized_tribes_id, recognized_tribes_state, date) VALUES ( 64, 64, '09/24/1857');
+INSERT INTO treaties (recognized_tribes_id, recognized_tribes_state, date) VALUES ( 2, 2, '04/02/1852');	
+INSERT INTO treaties (recognized_tribes_id, recognized_tribes_state, date) VALUES ( 6, 6, '11/01/1841');	
+INSERT INTO treaties (recognized_tribes_id, recognized_tribes_state, date) VALUES ( 10, 10, '07/14/1836');	
+INSERT INTO treaties (recognized_tribes_id, recognized_tribes_state, date) VALUES ( 17, 17, '02/28/1801');
+INSERT INTO treaties (recognized_tribes_id, recognized_tribes_state, date) VALUES ( 20, 20, '06/23/1821');	
+INSERT INTO treaties (recognized_tribes_id, recognized_tribes_state, date) VALUES ( 5, 5, '08/05/1850');	
+INSERT INTO treaties (recognized_tribes_id, recognized_tribes_state, date) VALUES ( 4, 4, '07/10/1801');	
+INSERT INTO treaties (recognized_tribes_id, recognized_tribes_state, date) VALUES ( 1, 1, '05/31/1864');	
+INSERT INTO treaties (recognized_tribes_id, recognized_tribes_state, date) VALUES ( 9, 9, '03/09/1872');	
+
+	
+CREATE TABLE land_mark_cases (
 	id PRIMARY KEY AUTOINCREMENT,
 	FOREIGN KEY (recognized_tribes_id) REFERENCES recognized_tribes(id),
-	FOREIGN KEY (recognized_tribes_state) REFERENCES recognized_tribes(rec_location_state),
 	outcome TEXT,
 	date TEXT,
 	FOREIGN KEY (lawyers_involved) REFERENCES lawyers(name)
 	);
+	
+INSERT INTO land_mark_cases (recognized_tribes_id, outcome, date, lawyers_involved) VALUES ( 64, 'won','09/09/2019', );
+INSERT INTO land_mark_cases (recognized_tribes_id, outcome, date, lawyers_involved) VALUES ( 52, 'won', '08/15/2001', );
+INSERT INTO land_mark_cases (recognized_tribes_id, outcome, date, lawyers_involved) VALUES ( 45, 'lost', '07/02/1996', );
+INSERT INTO land_mark_cases (recognized_tribes_id, outcome, date, lawyers_involved) VALUES ( 37, 'won', '04/04/2004', );
+INSERT INTO land_mark_cases (recognized_tribes_id, outcome, date, lawyers_involved) VALUES ( 25, 'won', '02/22/2022', );
+INSERT INTO land_mark_cases (recognized_tribes_id, outcome, date, lawyers_involved) VALUES ( 61, 'stalemate', '01/31/2001', );
+INSERT INTO land_mark_cases (recognized_tribes_id, outcome, date, lawyers_involved) VALUES ( 11, 'won', '05/08/1986', );
+INSERT INTO land_mark_cases (recognized_tribes_id, outcome, date, lawyers_involved) VALUES ( 8, 'lost', '02/11/1994', );
 	
 CREATE TABLE lawyers (
 	id PRIMARY KEY AUTOINCREMENT,
@@ -222,5 +244,17 @@ CREATE TABLE lawyers (
 	age INTEGER,
 	active TEXT
 	);
+	
+INSERT INTO lawyers (lawyer_name, school, age, active) VALUES ('Chuck Davis', 'Harvard Law School', 45, 'yes');
+INSERT INTO lawyers (lawyer_name, school, age, active) VALUES ('Wilber Matthews', 'Yale Law School', 36, 'yes');
+INSERT INTO lawyers (lawyer_name, school, age, active) VALUES ('Stefani Wilbur', 'Stanford Law School', 27, 'yes');
+INSERT INTO lawyers (lawyer_name, school, age, active) VALUES ('Charles Heavy Feather', 'Columbia Law School', 29, 'yes');
+INSERT INTO lawyers (lawyer_name, school, age, active) VALUES ('Andrew Garfield', 'University of California, Berkeley', 52, 'no');
+INSERT INTO lawyers (lawyer_name, school, age, active) VALUES ('Amy Santiago', 'University of California, Los Angeles', 28, 'yes');
+INSERT INTO lawyers (lawyer_name, school, age, active) VALUES ('Samantha Red Hawk', 'Georgetown University', 31, 'yes');
+INSERT INTO lawyers (lawyer_name, school, age, active) VALUES ('Harvy Dent', 'Harvard Law School', 34, 'no');
+INSERT INTO lawyers (lawyer_name, school, age, active) VALUES ('Henry Tahoe', 'Yale Law School', 36, 'yes');
+INSERT INTO lawyers (lawyer_name, school, age, active) VALUES ('Andrew Matis', 'University of Notre Dame', 46, 'yes');
+INSERT INTO lawyers (lawyer_name, school, age, active) VALUES ('Chiandra Sage', 'Boston University', 27, 'yes');
 	
 	
