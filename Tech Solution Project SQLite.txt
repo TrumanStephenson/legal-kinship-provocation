@@ -3,31 +3,34 @@ CREATE TABLE users (
 	user_name TEXT, 
 	phone_number INTEGER, 
 	email TEXT, 
-	tribal_affilation TEXT, 
-	age INTEGER
+	age INTEGER,
+	recognized_tribes_id INTEGER,
+	FOREIGN KEY (recognized_tribes_id) REFERENCES recognized_tribes(id)
 	);
+	
+CREATE TABLE users (id INTEGER PRIMARY KEY AUTOINCREMENT, user_name TEXT, phone_number INTEGER, email TEXT, age INTEGER, recognized_tribes_id INTEGER, FOREIGN KEY (recognized_tribes_id) REFERENCES recognized_tribes(id));
 
-// Test Users
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation) VALUES ('Willow', 9168136356, 'noneyu@business.com', 'Apache', 23);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation) VALUES ('Red Hawk', 805795321, 'involved@loans.net', 'Arapaho', 31);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation) VALUES ('Steven', 5048259116, 'apparentapi@this.org', 'Blackfeet', 18);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation) VALUES ('Edwin', 9738524521, 'thiswebsiteemail@leavemealone.com', 'Cherokee Nation', 23);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation) VALUES ('Gus', 9168136356, 'noneyu@business.com', 'Apache', 23);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation) VALUES ('Atlas', 8592734657, 'ungovernable@libretarian.com', 'Cheyenne', 25);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation) VALUES ('Eric', 9168596824, 'thisemail@this.org', 'Sioux', 29);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation) VALUES ('Stefani', 707213569, 'noneyabusiness@nunya.com', 'Me-Wuk', 29);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation) VALUES ('Ray', 4568912531, 'emailme@thisplace.com', 'Chitimacha', 22);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation) VALUES ('Andrew', 8627534685, 'emailthattohere@there.net', 'Shoshone', 27);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation) VALUES ('Jumping Horse', 1645947562, 'thisplaceat@google.com', 'Flandreau Santee Sioux', 19);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation) VALUES ('Raven', 3578524619, 'babreibamapo-7855@yopmail.com', 'Yavapai Nation', 37);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation) VALUES ('Eagle', 2684597521, 'decoiboigreibri-6024@yopmail.com', 'Navajo', 19);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation) VALUES ('Bear', 5862354971, 'prdrvnc543@couldmail.com', 'Hopi', 18);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation) VALUES ('Horrus', 7856241937, 'rardjlo536@none.com', 'Inaja Band of Diegueno', 28);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation) VALUES ('Michael', 6248953715, 'riskylink@dontclickme.net', 'Iowa Tribe', 22);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation) VALUES ('Henry', 2654853214, 'henrydavidthuraeu92@hotmail.net', 'Ione Band of Miwok Indians', 31);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation) VALUES ('Michelle', 7078256535, 'yournamehere@that.org', 'Klamath', 27);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation) VALUES ('Lauren', 8059682516, 'crazyemailname@atlast.net', 'Onongaga', 20);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation) VALUES ('Lianne', 4522563541, 'liannesolutions@bus.gov', 'Ottowa', 25);
+
+INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Willow', 9168136356, 'noneyu@business.com', 27, 23);
+INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Red Hawk', 805795321, 'involved@loans.net', 43, 31);
+INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Steven', 5048259116, 'apparentapi@this.org', 32, 18);
+INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Edwin', 9738524521, 'thiswebsiteemail@leavemealone.com', 17, 23);
+INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Gus', 9168136356, 'noneyu@business.com', 'Apache', 23, 64);
+INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Atlas', 8592734657, 'ungovernable@libretarian.com', 13, 25);
+INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Eric', 9168596824, 'thisemail@this.org', 12, 56);
+INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Stefani', 707213569, 'noneyabusiness@nunya.com', 9, 29);
+INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Ray', 4568912531, 'emailme@thisplace.com', 9, 22);
+INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Andrew', 8627534685, 'emailthattohere@there.net', 8, 27);
+INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Jumping Horse', 1645947562, 'thisplaceat@google.com', 7, 19);
+INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Raven', 3578524619, 'babreibamapo-7855@yopmail.com', 5, 37);
+INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Eagle', 2684597521, 'decoiboigreibri-6024@yopmail.com', 1, 19);
+INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Bear', 5862354971, 'prdrvnc543@couldmail.com', 15, 18);
+INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Horrus', 7856241937, 'rardjlo536@none.com', 45, 45);
+INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Michael', 6248953715, 'riskylink@dontclickme.net', 22, 22);
+INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Henry', 2654853214, 'henrydavidthuraeu92@hotmail.net', 19, 31);
+INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Michelle', 7078256535, 'yournamehere@that.org', 27, 27);
+INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Lauren', 8059682516, 'crazyemailname@atlast.net', 25, 20);
+INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Lianne', 4522563541, 'liannesolutions@bus.gov', 25, 3);
 
 
 
@@ -36,8 +39,11 @@ CREATE TABLE mmiw (
 	id INTEGER PRIMARY KEY AUTOINCREMENT, 
 	mmiw_total REAL, 
 	mmiw_year INTEGER, 
+	recognized_tribes_id INTEGER,
 	FOREIGN KEY (recognized_tribes_id) REFERENCES recognized_tribes(id)
 	);
+	
+CREATE TABLE mmiw (id INTEGER PRIMARY KEY AUTOINCREMENT, mmiw_total REAL, mmiw_year INTEGER, recognized_tribes_id INTEGER, FOREIGN KEY (recognized_tribes_id) REFERENCES recognized_tribes(id));
 
 INSERT INTO mmiw (mmiw_total, mmiw_year, recognized_tribes_id) VALUES (5491, 2022, 5);
 INSERT INTO mmiw (mmiw_total, mmiw_year, recognized_tribes_id) VALUES (506, 2018, 2);
@@ -56,81 +62,83 @@ CREATE TABLE recognized_tribes (
 	rec_phonenumber INTEGER,
 	rec_email TEXT
 	);
+	
+CREATE TABLE recognized_tribes (id INTEGER PRIMARY KEY AUTOINCREMENT, rec_name TEXT, rec_location_state TEXT, rec_local_office TEXT, rec_phonenumber INTEGER, rec_email TEXT);
 
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Absentee-Shawnee Tribe of Indians Of Oklahoma', 'Oklahoma', '2025 S. Gordon Cooper Dr, Shawnee, OK 74801', 4052754030, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation', 'California', '5401 Dinah Shore Dr, Palm Springs, CA 92264', 7606996800, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Ak-Chin Indian Community', 'Arizona', '42507 W. Peters and Nall Rd, Maricopa, AZ 85138', 5205681000, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Alabama-Coushatta Tribe of Texas', 'Texas', '571 State Park Road 56, Livingston, TX 77351', 9365631100, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Alabama-Quassarte Tribal Town', 'Oklahoma', '101 E. Broadway Wetumka, Ok. 74883', 4054523987, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Alturas Indian Rancheria', 'California', '901 County Road 56, Alturas, CA 96101-7809', 5302333141, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Apache Tribe of Oklahoma', 'Oklahoma', '511 E. Colorado St. Anadarko, OK 73005', 4052479493, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Arapaho Tribe of the Wind River Reservation', 'Wyoming', '533 Ethete Rd, Ethete, WY 82510', 3073326120, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Aroostook Band of Micmacs', 'Maine', '8 Northern Rd, Presque Isle, ME 04769', 2077641972, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation', 'Montana', '501 Medicine Bear Road, Poplar, MT 59255', 4067682300, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Augustine Band of Cahuilla Indians', 'California', '84-001 AVENUE 54, Coachella, California 92236', 7603984722, 'INFO@AUGUSTINETRIBE-NSN.GOV');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Bad River Band of the Lake Superior Tribe of Chippewa Indians of the Bad River Reservation', 'Wisconsin', '72682 Maple St, Ashland, Wisconsin 54806', 7156827111, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Bay Mills Indian Community', 'Michigan', '12140 W Lakeshore Dr, Brimley, MI 49715', 9062483241, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Bear River Band of the Rohnerville Rancheria', 'California', 266 Keisner Rd, Loleta, CA', 7077331900, 'communications@brb-nsn.gov');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Berry Creek Rancheria of Maidu Indians of California', 'California', '5 Tyme Way, Oroville, CA 95966', 5305343859, 'TribalCouncil@berrycreekrancheria.com');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Big Lagoon Rancheria', 'California', 'P.O. Box 3060, Tinidad, CA 95570', 7078260495, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Big Pine Paiute Tribe of the Owens Valley', 'California', 'Tribal Office: 825 S. Main Street, Big Pine, CA 93513', 7609382003, 'Email: info@BigPinePaiute.org');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Big Sandy Rancheria of Western Mono Indians of California', 'California', '37387 Auberry Mission Road, Auberry, CA 93602', 5598554003, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Big Valley Band of Pomo Indians of the Big Valley Rancheria', 'California', '2726 Mission Rancheria Rd, Lakeport, CA 95453', 7072633924, 'receptionist@big-valley.net');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Bishop Paiute Tribe', 'California', '50 N Tu Su Ln, Bishop, CA 93514', 7608733584, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Blackfeet Tribe of the Blackfeet Indian Reservation of Montana', 'Montana', '640 All Chiefs Road Browning, MT 59417', 4063387521, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Blue Lake Rancheria', 'California', '428 Chartin Rd, Blue Lake, CA 95525', 7076685101, 'info@bluelakerancheria-nsn.gov');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Bridgeport Indian Colony', 'California', 'P.O. Box 37, 355 Sage Brush Drive, Bridgeport CA. 93517', NULL, 'secretary@bridgeportindiancolony.com');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Buena Vista Rancheria of Me-Wuk Indians of California', 'California', '1418 20th St, Sacramento, CA 95811', 9164910011, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Burns Paiute Tribe', 'Oregon', '100 Pasigo St, Burns, OR 97720', 5415732088, 'info@burnspaiute-nsn.gov');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Cabazon Band of Mission Indians', 'California', '84-245 Indio Springs Parkway, Indio, CA 92203', 7604085451, 'jbarnum@cabazonindians-nsn.gov');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Cachil DeHe Band of Wintun Indians of the Colusa Indian Community of the Colusa Rancheria', 'California', '3730 Highway 45, Colusa, CA 95932', 5304588231, 'cicc@colusa-nsn.gov');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Caddo Nation of Oklahoma', 'Oklahoma', 'P.O. Box 487 Binger, OK 73009', 4056562344, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Cahto Tribe of the Laytonville Rancheria', 'California', 'P.O. BOX 1239 Laytonville, CA 95454', 7079846197, receptionist@cahtotribe-nsn.gov);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Cahuilla Band of Indians', 'California', '52701 Us Highway 371, Anza, CA 92539', 9517635549, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('California Valley Miwok Tribe', 'California', '14807 Avenida Central, La Grange, California 95329', 2099314567, 'office@cvmt.net');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Campo Band of Diegueno Mission Indians of the Campo Indian Reservation', 'California', '36190 Church Road, Suite 1, Campo, CA 91906', 6194789046, 'info@campo-nsn.gov');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Capitan Grande Band of Diegueno Mission Indians of California (Barona Group of Capitan Grande Band of Mission Indians of the Barona Reservation)', 'California', '1095 Barona Road, Lakeside, CA 92040', 6194436612, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Viejas (Baron Long) Group of Capitan Grande Band of Mission Indians of the Viejas Reservation)', 'California', '1 Viejas Grade Road, Alpine, CA 91901', 6194453810, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Catawba Indian Nation', 'South Carolina', '996 Avenue Of The Nations, Rock Hill, SC 29730', 8033664792, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Cayuga Nation', 'New York', 'P.O. Box 803, Seneca Falls NY, 13148', 3155680750, 'bjradford@gocayuga.com');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Cedarville Rancheria', 'California', '300 W 1st St, Alturas, CA 96101', 5302333969, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Chemehuevi Indian Tribe of the Chemehuevi Reservation', 'California', '1990 Palo Verde Drive, Havasu Lake, CA 92363', 7608584219, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Cher-Ae Heights Indian Community of the Trinidad Rancheria', 'California', '1 Cher-Ae Lane P.O. Box 630 Trinidad, CA 95570', 7076770211, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Cherokee Nation', 'Oklahoma', '17675 S Muskogee Ave, Tahlequah, OK 74464', 9184535000, 'irb@cherokee.org');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Cheyenne and Arapaho Tribes, Oklahoma', 'Oklahoma', '100 Red Moon Cir, Concho, Oklahoma 73022', 4052620345, 'info@cheyenneandarapaho-nsn.gov');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Cheyenne River Sioux Tribe of the Cheyenne River Reservation', 'South Dakota', 'P.O. Box 590, 24390 US Hwy 212, Eagle Butte SD, 57625', 6059647812, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Chickahominy Indian Tribe', 'Virginia', '8200 Lott Cary Rd, Providence Forge, VA 23140', 8048292027, 'info@chickahominytribe.org');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Chickahominy Indian Tribe—Eastern Division', 'Virginia', '2895 Mt. Pleasant Rd, Providence Forge, VA 23140', 8049667815, 'info@cit-ed.org');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Chicken Ranch Rancheria of Me-Wuk Indians of California', 'California', '9195 Tribal Way, Jamestown, CA 95327', 2099849066, 'lmathiesen@crtribal.com');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Chippewa Cree Indians of the Rocky Boy's Reservation', 'Montana', '96 Clinic Rd, Box Elder, MT 59521', 4063954282, 'chairman@chippewa-cree.org');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Chitimacha Tribe of Louisiana', 'Louisiana', '155 Chitimacha Loop, Charenton, LA 70523', 3379234973, 'info@chitimacha.gov');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Citizen Potawatomi Nation, Oklahoma', 'Oklahoma', '41207 Hardesty Rd, Shawnee, OK 74801', 4058784862, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Cloverdale Rancheria of Pomo Indians of California', 'California', '555 South Cloverdale Boulevard, Suite A, Cloverdale, CA 95425', 7078945775, 'info@cloverdalerancheria.com');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Cocopah Tribe of Arizona', 'Airzona', '14515 S. Veterans Dr, Somerton, AZ 85350', 9286272102, 'cocotcsec@cocopah.com');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Coeur D'Alene Tribe', 'Idaho', '850 A St, Plummer, ID 83851', 2086861800, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Cold Springs Rancheria of Mono Indians of California', 'California', '32861 Sycamore Rd, Tollhouse, CA 93667', 5592171738, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona and California', 'Arizona', '26600 Mohave Rd, Parker, AZ 85344', , 'feedback@critonline.com');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona and California', 'California', '26600 Mohave Rd, Parker, AZ 85344', , 'feedback@critonline.com');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Comanche Nation', 'Oklahoma', '584 NW Bingo Rd, Lawton, OK 73507', 5804923240, 'mark.woommavovah@comanchenation.com');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Confederated Salish and Kootenai Tribes of the Flathead Reservation', 'Montana', 'Highway 93 W, Pablo, MT 59855', 4066752700, 'info@cskt.org');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Confederated Tribes and Bands of the Yakama Nation', 'Washington', '401 Fort Rd, Toppenish, WA 98948', 5098655121, 'fdsk@critfc.org');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Confederated Tribes of Siletz Indians of Oregon', 'Oregon', '201 SE Swan Ave, P.O. Box 549, Siletz, OR 97380', 5033936942, 'dpigsley@msn.com');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Confederated Tribes of the Chehalis Reservation', 'Washington', '420 Howanut Road, Oakville, WA 98568', 3602735911, 'chairman@chehalistribe.org');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Confederated Tribes of the Colville Reservation', 'Washington', '21 COLVILLE ST, NESPELEM, WA, 99155', 5096342200, 'neeka.somday@colvilletribes.com');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians', 'Oregon', '1245 Fulton Ave, Coos Bay, OR 97420', 5418889577, 'news@ctclusi.org');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Confederated Tribes of the Goshute Reservation, Nevada and Utah', 'Utah', '660 S 200 E Ste 250, Salt Lake City, UT 84111', 8013592256, NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Confederated Tribes of the Grand Ronde Community of Oregon', 'Oregon', '9615 Grand Ronde Rd, Grand Ronde, OR 97347', 5038795211, 'info@grandronde.org');
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Confederated Tribes of the Umatilla Indian Reservation', 'Oregon', NULL, , NULL);
-INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number) VALUES ('Pawnee Nation of Oklahoma', 'Oklahoma', '881 Little Dee Dr Pawnee, OK 74058', , 9187623621);
-
-
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Absentee-Shawnee Tribe of Indians Of Oklahoma', 'Oklahoma', '2025 S. Gordon Cooper Dr, Shawnee, OK 74801', 4052754030, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation', 'California', '5401 Dinah Shore Dr, Palm Springs, CA 92264', 7606996800, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Ak-Chin Indian Community', 'Arizona', '42507 W. Peters and Nall Rd, Maricopa, AZ 85138', 5205681000, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Alabama-Coushatta Tribe of Texas', 'Texas', '571 State Park Road 56, Livingston, TX 77351', 9365631100, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Alabama-Quassarte Tribal Town', 'Oklahoma', '101 E. Broadway Wetumka, Ok. 74883', 4054523987, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Alturas Indian Rancheria', 'California', '901 County Road 56, Alturas, CA 96101-7809', 5302333141, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Apache Tribe of Oklahoma', 'Oklahoma', '511 E. Colorado St. Anadarko, OK 73005', 4052479493, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Arapaho Tribe of the Wind River Reservation', 'Wyoming', '533 Ethete Rd, Ethete, WY 82510', 3073326120, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Aroostook Band of Micmacs', 'Maine', '8 Northern Rd, Presque Isle, ME 04769', 2077641972, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation', 'Montana', '501 Medicine Bear Road, Poplar, MT 59255', 4067682300, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Augustine Band of Cahuilla Indians', 'California', '84-001 AVENUE 54, Coachella, California 92236', 7603984722, 'INFO@AUGUSTINETRIBE-NSN.GOV');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Bad River Band of the Lake Superior Tribe of Chippewa Indians of the Bad River Reservation', 'Wisconsin', '72682 Maple St, Ashland, Wisconsin 54806', 7156827111, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Bay Mills Indian Community', 'Michigan', '12140 W Lakeshore Dr, Brimley, MI 49715', 9062483241, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Bear River Band of the Rohnerville Rancheria', 'California', '266 Keisner Rd, Loleta, CA', 7077331900, 'communications@brb-nsn.gov');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Berry Creek Rancheria of Maidu Indians of California', 'California', '5 Tyme Way, Oroville, CA 95966', 5305343859, 'TribalCouncil@berrycreekrancheria.com');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Big Lagoon Rancheria', 'California', 'P.O. Box 3060, Tinidad, CA 95570', 7078260495, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Big Pine Paiute Tribe of the Owens Valley', 'California', 'Tribal Office: 825 S. Main Street, Big Pine, CA 93513', 7609382003, 'Email: info@BigPinePaiute.org');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Big Sandy Rancheria of Western Mono Indians of California', 'California', '37387 Auberry Mission Road, Auberry, CA 93602', 5598554003, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Big Valley Band of Pomo Indians of the Big Valley Rancheria', 'California', '2726 Mission Rancheria Rd, Lakeport, CA 95453', 7072633924, 'receptionist@big-valley.net');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Bishop Paiute Tribe', 'California', '50 N Tu Su Ln, Bishop, CA 93514', 7608733584, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Blackfeet Tribe of the Blackfeet Indian Reservation of Montana', 'Montana', '640 All Chiefs Road Browning, MT 59417', 4063387521, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Blue Lake Rancheria', 'California', '428 Chartin Rd, Blue Lake, CA 95525', 7076685101, 'info@bluelakerancheria-nsn.gov');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Bridgeport Indian Colony', 'California', 'P.O. Box 37, 355 Sage Brush Drive, Bridgeport CA. 93517', NULL, 'secretary@bridgeportindiancolony.com');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Buena Vista Rancheria of Me-Wuk Indians of California', 'California', '1418 20th St, Sacramento, CA 95811', 9164910011, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Burns Paiute Tribe', 'Oregon', '100 Pasigo St, Burns, OR 97720', 5415732088, 'info@burnspaiute-nsn.gov');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Cabazon Band of Mission Indians', 'California', '84-245 Indio Springs Parkway, Indio, CA 92203', 7604085451, 'jbarnum@cabazonindians-nsn.gov');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Cachil DeHe Band of Wintun Indians of the Colusa Indian Community of the Colusa Rancheria', 'California', '3730 Highway 45, Colusa, CA 95932', 5304588231, 'cicc@colusa-nsn.gov');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Caddo Nation of Oklahoma', 'Oklahoma', 'P.O. Box 487 Binger, OK 73009', 4056562344, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Cahto Tribe of the Laytonville Rancheria', 'California', 'P.O. BOX 1239 Laytonville, CA 95454', 7079846197, 'receptionist@cahtotribe-nsn.gov');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Cahuilla Band of Indians', 'California', '52701 Us Highway 371, Anza, CA 92539', 9517635549, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('California Valley Miwok Tribe', 'California', '14807 Avenida Central, La Grange, California 95329', 2099314567, 'office@cvmt.net');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Campo Band of Diegueno Mission Indians of the Campo Indian Reservation', 'California', '36190 Church Road, Suite 1, Campo, CA 91906', 6194789046, 'info@campo-nsn.gov');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Capitan Grande Band of Diegueno Mission Indians of California (Barona Group of Capitan Grande Band of Mission Indians of the Barona Reservation)', 'California', '1095 Barona Road, Lakeside, CA 92040', 6194436612, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Viejas (Baron Long) Group of Capitan Grande Band of Mission Indians of the Viejas Reservation)', 'California', '1 Viejas Grade Road, Alpine, CA 91901', 6194453810, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Catawba Indian Nation', 'South Carolina', '996 Avenue Of The Nations, Rock Hill, SC 29730', 8033664792, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Cayuga Nation', 'New York', 'P.O. Box 803, Seneca Falls NY, 13148', 3155680750, 'bjradford@gocayuga.com');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Cedarville Rancheria', 'California', '300 W 1st St, Alturas, CA 96101', 5302333969, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Chemehuevi Indian Tribe of the Chemehuevi Reservation', 'California', '1990 Palo Verde Drive, Havasu Lake, CA 92363', 7608584219, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Cher-Ae Heights Indian Community of the Trinidad Rancheria', 'California', '1 Cher-Ae Lane P.O. Box 630 Trinidad, CA 95570', 7076770211, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Cherokee Nation', 'Oklahoma', '17675 S Muskogee Ave, Tahlequah, OK 74464', 9184535000, 'irb@cherokee.org');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Cheyenne and Arapaho Tribes, Oklahoma', 'Oklahoma', '100 Red Moon Cir, Concho, Oklahoma 73022', 4052620345, 'info@cheyenneandarapaho-nsn.gov');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Cheyenne River Sioux Tribe of the Cheyenne River Reservation', 'South Dakota', 'P.O. Box 590, 24390 US Hwy 212, Eagle Butte SD, 57625', 6059647812, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Chickahominy Indian Tribe', 'Virginia', '8200 Lott Cary Rd, Providence Forge, VA 23140', 8048292027, 'info@chickahominytribe.org');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Chickahominy Indian Tribe—Eastern Division', 'Virginia', '2895 Mt. Pleasant Rd, Providence Forge, VA 23140', 8049667815, 'info@cit-ed.org');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Chicken Ranch Rancheria of Me-Wuk Indians of California', 'California', '9195 Tribal Way, Jamestown, CA 95327', 2099849066, 'lmathiesen@crtribal.com');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Chippewa Cree Indians of the Rocky Boy's Reservation', 'Montana', '96 Clinic Rd, Box Elder, MT 59521', 4063954282, 'chairman@chippewa-cree.org');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Chitimacha Tribe of Louisiana', 'Louisiana', '155 Chitimacha Loop, Charenton, LA 70523', 3379234973, 'info@chitimacha.gov');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Citizen Potawatomi Nation, Oklahoma', 'Oklahoma', '41207 Hardesty Rd, Shawnee, OK 74801', 4058784862, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Cloverdale Rancheria of Pomo Indians of California', 'California', '555 South Cloverdale Boulevard, Suite A, Cloverdale, CA 95425', 7078945775, 'info@cloverdalerancheria.com');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Cocopah Tribe of Arizona', 'Airzona', '14515 S. Veterans Dr, Somerton, AZ 85350', 9286272102, 'cocotcsec@cocopah.com');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Coeur D'Alene Tribe', 'Idaho', '850 A St, Plummer, ID 83851', 2086861800, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Cold Springs Rancheria of Mono Indians of California', 'California', '32861 Sycamore Rd, Tollhouse, CA 93667', 5592171738, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona and California', 'Arizona', '26600 Mohave Rd, Parker, AZ 85344', NULL, 'feedback@critonline.com');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona and California', 'California', '26600 Mohave Rd, Parker, AZ 85344', NULL, 'feedback@critonline.com');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Comanche Nation', 'Oklahoma', '584 NW Bingo Rd, Lawton, OK 73507', 5804923240, 'mark.woommavovah@comanchenation.com');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Confederated Salish and Kootenai Tribes of the Flathead Reservation', 'Montana', 'Highway 93 W, Pablo, MT 59855', 4066752700, 'info@cskt.org');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Confederated Tribes and Bands of the Yakama Nation', 'Washington', '401 Fort Rd, Toppenish, WA 98948', 5098655121, 'fdsk@critfc.org');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Confederated Tribes of Siletz Indians of Oregon', 'Oregon', '201 SE Swan Ave, P.O. Box 549, Siletz, OR 97380', 5033936942, 'dpigsley@msn.com');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Confederated Tribes of the Chehalis Reservation', 'Washington', '420 Howanut Road, Oakville, WA 98568', 3602735911, 'chairman@chehalistribe.org');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Confederated Tribes of the Colville Reservation', 'Washington', '21 COLVILLE ST, NESPELEM, WA, 99155', 5096342200, 'neeka.somday@colvilletribes.com');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians', 'Oregon', '1245 Fulton Ave, Coos Bay, OR 97420', 5418889577, 'news@ctclusi.org');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Confederated Tribes of the Goshute Reservation, Nevada and Utah', 'Utah', '660 S 200 E Ste 250, Salt Lake City, UT 84111', 8013592256, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Confederated Tribes of the Grand Ronde Community of Oregon', 'Oregon', '9615 Grand Ronde Rd, Grand Ronde, OR 97347', 5038795211, 'info@grandronde.org');
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Confederated Tribes of the Umatilla Indian Reservation', 'Oregon', NULL, NULL, NULL);
+INSERT INTO recognized_tribes (rec_name, rec_location_state, rec_local_office, rec_phone_number, rec_email) VALUES ('Pawnee Nation of Oklahoma', 'Oklahoma', '881 Little Dee Dr Pawnee, OK 74058', NULL, 9187623621);
 
 
 CREATE TABLE unrecognized_tribes (
-	id PRIMARY KEY AUTOINCREMENT, 
+	id INTEGER PRIMARY KEY AUTOINCREMENT, 
 	unrec_name TEXT, 
 	unrec_location_state TEXT
 	);
+	
+CREATE TABLE unrecognized_tribes (id INTEGER PRIMARY KEY AUTOINCREMENT, unrec_name TEXT, unrec_location_state TEXT);
 
 
 INSERT INTO unrecognized_tribes (unrec_name, unrec_location_state) VALUES ('Algonquian Confederacy of the Quinnipiac Tribal Council', 'Indiana');
@@ -202,48 +210,57 @@ INSERT INTO unrecognized_tribes (unrec_name, unrec_location_state) VALUES ('Yuch
 
 // Litigation Information
 CREATE TABLE treaties (
-	id PRIMARY KEY AUTOINCREMENT, 
-	FOREIGN KEY (recognized_tribes_id) REFERENCES recognized_tribes(id), 
-	FOREIGN KEY (recognized_tribes_state) REFERENCES recognized_tribes(rec_location_state),
+	id INTEGER PRIMARY KEY AUTOINCREMENT, 
 	date TEXT,
+	recognized_tribes_id INTEGER,
+	FOREIGN KEY (recognized_tribes_id) REFERENCES recognized_tribes(id)
 	);
 	
-INSERT INTO treaties (recognized_tribes_id, recognized_tribes_state, date) VALUES ( 64, 64, '09/24/1857');
-INSERT INTO treaties (recognized_tribes_id, recognized_tribes_state, date) VALUES ( 2, 2, '04/02/1852');	
-INSERT INTO treaties (recognized_tribes_id, recognized_tribes_state, date) VALUES ( 6, 6, '11/01/1841');	
-INSERT INTO treaties (recognized_tribes_id, recognized_tribes_state, date) VALUES ( 10, 10, '07/14/1836');	
-INSERT INTO treaties (recognized_tribes_id, recognized_tribes_state, date) VALUES ( 17, 17, '02/28/1801');
-INSERT INTO treaties (recognized_tribes_id, recognized_tribes_state, date) VALUES ( 20, 20, '06/23/1821');	
-INSERT INTO treaties (recognized_tribes_id, recognized_tribes_state, date) VALUES ( 5, 5, '08/05/1850');	
-INSERT INTO treaties (recognized_tribes_id, recognized_tribes_state, date) VALUES ( 4, 4, '07/10/1801');	
-INSERT INTO treaties (recognized_tribes_id, recognized_tribes_state, date) VALUES ( 1, 1, '05/31/1864');	
-INSERT INTO treaties (recognized_tribes_id, recognized_tribes_state, date) VALUES ( 9, 9, '03/09/1872');	
+CREATE TABLE treaties (id INTEGER PRIMARY KEY AUTOINCREMENT, date TEXT, recognized_tribes_id INTEGER, FOREIGN KEY (recognized_tribes_id) REFERENCES recognized_tribes(id));
+	
+INSERT INTO treaties (date, recognized_tribes_id) VALUES ('1857-09-24', 64);
+INSERT INTO treaties (date, recognized_tribes_id) VALUES ('1852-04-02', 2); 
+INSERT INTO treaties (date, recognized_tribes_id) VALUES ('1841-11-01', 6); 
+INSERT INTO treaties (date, recognized_tribes_id) VALUES ('1836-07-14', 10); 
+INSERT INTO treaties (date, recognized_tribes_id) VALUES ('1801-02-28', 17);
+INSERT INTO treaties (date, recognized_tribes_id) VALUES ('1821-06-23', 20); 
+INSERT INTO treaties (date, recognized_tribes_id) VALUES ('1850-08-05', 12); 
+INSERT INTO treaties (date, recognized_tribes_id) VALUES ('1801-07-10', 4); 
+INSERT INTO treaties (date, recognized_tribes_id) VALUES ('1864-05-31', 1); 
+INSERT INTO treaties (date, recognized_tribes_id) VALUES ('1872-03-09', 18); 	
 
 	
 CREATE TABLE land_mark_cases (
-	id PRIMARY KEY AUTOINCREMENT,
-	FOREIGN KEY (recognized_tribes_id) REFERENCES recognized_tribes(id),
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	outcome TEXT,
 	date TEXT,
-	FOREIGN KEY (lawyers_involved) REFERENCES lawyers(name)
+	recognized_tribes_id INTEGER,
+	lawyers_involved INTEGER,
+	FOREIGN KEY (recognized_tribes_id) REFERENCES recognized_tribes(id),
+	FOREIGN KEY (lawyers_involved) REFERENCES lawyers(id)
 	);
 	
-INSERT INTO land_mark_cases (recognized_tribes_id, outcome, date, lawyers_involved) VALUES ( 64, 'won','09/09/2019', );
-INSERT INTO land_mark_cases (recognized_tribes_id, outcome, date, lawyers_involved) VALUES ( 52, 'won', '08/15/2001', );
-INSERT INTO land_mark_cases (recognized_tribes_id, outcome, date, lawyers_involved) VALUES ( 45, 'lost', '07/02/1996', );
-INSERT INTO land_mark_cases (recognized_tribes_id, outcome, date, lawyers_involved) VALUES ( 37, 'won', '04/04/2004', );
-INSERT INTO land_mark_cases (recognized_tribes_id, outcome, date, lawyers_involved) VALUES ( 25, 'won', '02/22/2022', );
-INSERT INTO land_mark_cases (recognized_tribes_id, outcome, date, lawyers_involved) VALUES ( 61, 'stalemate', '01/31/2001', );
-INSERT INTO land_mark_cases (recognized_tribes_id, outcome, date, lawyers_involved) VALUES ( 11, 'won', '05/08/1986', );
-INSERT INTO land_mark_cases (recognized_tribes_id, outcome, date, lawyers_involved) VALUES ( 8, 'lost', '02/11/1994', );
+CREATE TABLE land_mark_cases (id INTEGER PRIMARY KEY AUTOINCREMENT, outcome TEXT, date TEXT, recognized_tribes_id INTEGER, lawyers_involved INTEGER, FOREIGN KEY (recognized_tribes_id) REFERENCES recognized_tribes(id), FOREIGN KEY (lawyers_involved) REFERENCES lawyers(id));
+	
+INSERT INTO land_mark_cases (outcome, date, recognized_tribes_id, lawyers_involved) VALUES ('won', '2019-09-09', 9, 64);
+INSERT INTO land_mark_cases (outcome, date, recognized_tribes_id, lawyers_involved) VALUES ('won', '2001-08-15', 5, 52);
+INSERT INTO land_mark_cases (outcome, date, recognized_tribes_id, lawyers_involved) VALUES ('lost', '1996-07-02', 4, 45);
+INSERT INTO land_mark_cases (outcome, date, recognized_tribes_id, lawyers_involved) VALUES ('won', '2004-04-04', 1, 37);
+INSERT INTO land_mark_cases (outcome, date, recognized_tribes_id, lawyers_involved) VALUES ('won', '2022-02-22', 6, 25);
+INSERT INTO land_mark_cases (outcome, date, recognized_tribes_id, lawyers_involved) VALUES ('stalemate', '2001-01-31', 8, 61);
+INSERT INTO land_mark_cases (outcome, date, recognized_tribes_id, lawyers_involved) VALUES ('won', '1986-05-08', 10, 11);
+INSERT INTO land_mark_cases (outcome, date, recognized_tribes_id, lawyers_involved) VALUES ('lost', '1994-02-11', 7, 8);
+
 	
 CREATE TABLE lawyers (
-	id PRIMARY KEY AUTOINCREMENT,
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	lawyer_name TEXT,
 	school TEXT,
 	age INTEGER,
 	active TEXT
 	);
+	
+CREATE TABLE lawyers (id INTEGER PRIMARY KEY AUTOINCREMENT, lawyer_name TEXT, school TEXT, age INTEGER, active TEXT);
 	
 INSERT INTO lawyers (lawyer_name, school, age, active) VALUES ('Chuck Davis', 'Harvard Law School', 45, 'yes');
 INSERT INTO lawyers (lawyer_name, school, age, active) VALUES ('Wilber Matthews', 'Yale Law School', 36, 'yes');
@@ -256,5 +273,4 @@ INSERT INTO lawyers (lawyer_name, school, age, active) VALUES ('Harvy Dent', 'Ha
 INSERT INTO lawyers (lawyer_name, school, age, active) VALUES ('Henry Tahoe', 'Yale Law School', 36, 'yes');
 INSERT INTO lawyers (lawyer_name, school, age, active) VALUES ('Andrew Matis', 'University of Notre Dame', 46, 'yes');
 INSERT INTO lawyers (lawyer_name, school, age, active) VALUES ('Chiandra Sage', 'Boston University', 27, 'yes');
-	
 	
