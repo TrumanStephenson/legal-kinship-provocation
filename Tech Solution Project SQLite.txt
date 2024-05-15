@@ -11,26 +11,26 @@ CREATE TABLE users (
 CREATE TABLE users (id INTEGER PRIMARY KEY AUTOINCREMENT, user_name TEXT, phone_number INTEGER, email TEXT, age INTEGER, recognized_tribes_id INTEGER, FOREIGN KEY (recognized_tribes_id) REFERENCES recognized_tribes(id));
 
 
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Willow', 9168136356, 'noneyu@business.com', 27, 23);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Red Hawk', 805795321, 'involved@loans.net', 43, 31);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Steven', 5048259116, 'apparentapi@this.org', 32, 18);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Edwin', 9738524521, 'thiswebsiteemail@leavemealone.com', 17, 23);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Gus', 9168136356, 'noneyu@business.com', 'Apache', 23, 64);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Atlas', 8592734657, 'ungovernable@libretarian.com', 13, 25);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Eric', 9168596824, 'thisemail@this.org', 12, 56);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Stefani', 707213569, 'noneyabusiness@nunya.com', 9, 29);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Ray', 4568912531, 'emailme@thisplace.com', 9, 22);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Andrew', 8627534685, 'emailthattohere@there.net', 8, 27);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Jumping Horse', 1645947562, 'thisplaceat@google.com', 7, 19);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Raven', 3578524619, 'babreibamapo-7855@yopmail.com', 5, 37);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Eagle', 2684597521, 'decoiboigreibri-6024@yopmail.com', 1, 19);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Bear', 5862354971, 'prdrvnc543@couldmail.com', 15, 18);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Horrus', 7856241937, 'rardjlo536@none.com', 45, 45);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Michael', 6248953715, 'riskylink@dontclickme.net', 22, 22);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Henry', 2654853214, 'henrydavidthuraeu92@hotmail.net', 19, 31);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Michelle', 7078256535, 'yournamehere@that.org', 27, 27);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Lauren', 8059682516, 'crazyemailname@atlast.net', 25, 20);
-INSERT INTO users (user_name, phone_number, email, tribal_affiliation, age) VALUES ('Lianne', 4522563541, 'liannesolutions@bus.gov', 25, 3);
+INSERT INTO users (user_name, phone_number, email, recognized_tribes_id, age) VALUES ('Willow', 9168136356, 'noneyu@business.com', 27, 23);
+INSERT INTO users (user_name, phone_number, email, recognized_tribes_id, age) VALUES ('Red Hawk', 805795321, 'involved@loans.net', 43, 31);
+INSERT INTO users (user_name, phone_number, email, recognized_tribes_id, age) VALUES ('Steven', 5048259116, 'apparentapi@this.org', 32, 18);
+INSERT INTO users (user_name, phone_number, email, recognized_tribes_id, age) VALUES ('Edwin', 9738524521, 'thiswebsiteemail@leavemealone.com', 17, 23);
+INSERT INTO users (user_name, phone_number, email, recognized_tribes_id, age) VALUES ('Gus', 9168136356, 'noneyu@business.com', 'Apache', 23, 64);
+INSERT INTO users (user_name, phone_number, email, recognized_tribes_id, age) VALUES ('Atlas', 8592734657, 'ungovernable@libretarian.com', 13, 25);
+INSERT INTO users (user_name, phone_number, email, recognized_tribes_id, age) VALUES ('Eric', 9168596824, 'thisemail@this.org', 12, 56);
+INSERT INTO users (user_name, phone_number, email, recognized_tribes_id, age) VALUES ('Stefani', 707213569, 'noneyabusiness@nunya.com', 9, 29);
+INSERT INTO users (user_name, phone_number, email, recognized_tribes_id, age) VALUES ('Ray', 4568912531, 'emailme@thisplace.com', 9, 22);
+INSERT INTO users (user_name, phone_number, email, recognized_tribes_id, age) VALUES ('Andrew', 8627534685, 'emailthattohere@there.net', 8, 27);
+INSERT INTO users (user_name, phone_number, email, recognized_tribes_id, age) VALUES ('Jumping Horse', 1645947562, 'thisplaceat@google.com', 7, 19);
+INSERT INTO users (user_name, phone_number, email, recognized_tribes_id, age) VALUES ('Raven', 3578524619, 'babreibamapo-7855@yopmail.com', 5, 37);
+INSERT INTO users (user_name, phone_number, email, recognized_tribes_id, age) VALUES ('Eagle', 2684597521, 'decoiboigreibri-6024@yopmail.com', 1, 19);
+INSERT INTO users (user_name, phone_number, email, recognized_tribes_id, age) VALUES ('Bear', 5862354971, 'prdrvnc543@couldmail.com', 15, 18);
+INSERT INTO users (user_name, phone_number, email, recognized_tribes_id, age) VALUES ('Horrus', 7856241937, 'rardjlo536@none.com', 45, 45);
+INSERT INTO users (user_name, phone_number, email, recognized_tribes_id, age) VALUES ('Michael', 6248953715, 'riskylink@dontclickme.net', 22, 22);
+INSERT INTO users (user_name, phone_number, email, recognized_tribes_id, age) VALUES ('Henry', 2654853214, 'henrydavidthuraeu92@hotmail.net', 19, 31);
+INSERT INTO users (user_name, phone_number, email, recognized_tribes_id, age) VALUES ('Michelle', 7078256535, 'yournamehere@that.org', 27, 27);
+INSERT INTO users (user_name, phone_number, email, recognized_tribes_id, age) VALUES ('Lauren', 8059682516, 'crazyemailname@atlast.net', 25, 20);
+INSERT INTO users (user_name, phone_number, email, recognized_tribes_id, age) VALUES ('Lianne', 4522563541, 'liannesolutions@bus.gov', 25, 3);
 
 
 
