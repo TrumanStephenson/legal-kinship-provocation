@@ -101,7 +101,7 @@ INSERT INTO mmiw (mmiw_total, mmiw_year, recognized_tribes_id) VALUES (36, 2021,
 INSERT INTO mmiw (mmiw_total, mmiw_year, recognized_tribes_id) VALUES (72, 2018, 22);
 INSERT INTO mmiw (mmiw_total, mmiw_year, recognized_tribes_id) VALUES (36, 2021, 64);
 
-
+-- Tribe information
 CREATE TABLE recognized_tribes (
 	id INTEGER PRIMARY KEY AUTOINCREMENT, 
 	rec_name TEXT, 
@@ -353,3 +353,20 @@ SELECT MAX(mmiw_total) AS max_mmiw_total, MIN(mmiw_total) AS min_mmiw_total FROM
 SELECT id, rec_name, rec_location_state FROM recognized_tribes WHERE rec_location_state = 'California';
 -- Table for each tribe from a specific state, California has a lot.
 SELECT id, rec_name, rec_location_state, rec_local_office, rec_phonenumber FROM recognized_tribes WHERE rec_location_state = 'California';
+-- Selecting specific tribes by number
+SELECT id, rec_name FROM recognized_tribes WHERE id IN (1, 5, 35, 20, 64);
+-- Wild card search for Local Offices that include the start of a letter
+SELECT id, rec_name FROM recognized_tribes WHERE rec_location_state = 'California' AND rec_local_office LIKE '%A%';
+
+-- Relation bewteen recognized and unrecognized tribes
+-- This Query is finding the state from Recognized tribes, then counting with COUNT.
+-- Also including a zero for states that don't have unrecognized tribes 
+-- And grouping them by state column
+SELECT rt.rec_location_state AS states,
+    COUNT(DISTINCT rt.id) AS recognized_tribes_count,
+    COUNT(DISTINCT ut.id) AS unrecognized_tribes_count
+	FROM recognized_tribes rt
+	LEFT JOIN unrecognized_tribes ut ON rt.rec_location_state = ut.unrec_location_state
+GROUP BY rt.rec_location_state;
+
+SELECT rt.rec_location_state AS states, COUNT(DISTINCT rt.id) AS recognized_tribes_count, COUNT(DISTINCT ut.id) AS unrecognized_tribes_count FROM recognized_tribes rt LEFT JOIN unrecognized_tribes ut ON rt.rec_location_state = ut.unrec_location_state GROUP BY rt.rec_location_state; 
