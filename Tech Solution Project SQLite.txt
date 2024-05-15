@@ -341,7 +341,7 @@ SELECT recognized_tribes_id, COUNT(*) AS num_users FROM users GROUP BY recognize
 SELECT u.user_name, u.phone_number, u.email, r.rec_name AS tribe_name, u.age FROM users u JOIN recognized_tribes r ON u.recognized_tribes_id = r.id;
 
 -- MMIW
-// Gets the stats from MMIW table and associates the tribes name
+-- Gets the stats from MMIW table and associates the tribes name
 SELECT m.mmiw_total, m.mmiw_year, r.rec_name AS tribe_name FROM mmiw m JOIN recognized_tribes r ON m.recognized_tribes_id = r.id;
 -- Total Average
 SELECT AVG(mmiw_total) AS avg_mmiw_total FROM mmiw;
